@@ -15,16 +15,21 @@ This method works by taking a set of possible view matrix addresses and testing 
 - The game’s field of view (FOV)  
 - The entity’s current position on the screen  
 
+## Getting started
+
+To use the tool, fill in the following global variables at the top of the C++ code 
+
+<img width="1165" height="622" alt="image" src="https://github.com/user-attachments/assets/2878e659-6add-4031-9852-79b8624310c9" />
+
 ## How it works
-
-The system uses the provided data to project world coordinates into screen space using each candidate view matrix.
-
-If the resulting screen coordinates closely match the entity’s actual position on the screen, that view matrix is considered a valid match and is stored.
+It uses the provided data to compute screen Coordinate, and if that screen coordiante is near the entity's currennt position on screen
+that view matrix is considered a valid match and is stored.
 
 To improve accuracy, the tool also scans memory around each starting view matrix address, checking offsets in the range of -32 to +32 bytes.
 
-## Getting started
 
-To use the tool, populate the global variables at the top of the C++ source file with the required values for your target process.
+it also takes into account Coloumn Major and Row major viewmatrices
+and also Y Down and Y-Up and prints out the valid view matrices if it was computed using row major or coloumn major and if it was Y-Down or Y-up
 
-<img width="1165" height="622" alt="image" src="https://github.com/user-attachments/assets/2878e659-6add-4031-9852-79b8624310c9" />
+<img width="1677" height="109" alt="image" src="https://github.com/user-attachments/assets/0a580f1b-eef3-48d3-a7ff-f12848e4f07d" />
+
