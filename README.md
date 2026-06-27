@@ -19,7 +19,8 @@ This method works by taking a set of possible view matrix addresses and testing 
 
 To use the tool, fill in the following global variables at the top of the C++ code 
 
-<img width="1165" height="622" alt="image" src="https://github.com/user-attachments/assets/2878e659-6add-4031-9852-79b8624310c9" />
+<img width="1258" height="603" alt="image" src="https://github.com/user-attachments/assets/dfcf637d-d92e-4dd6-823a-aa97edac5bc6" />
+
 
 ## How it works
 It uses the provided data to compute screen Coordinate, and if that screen coordiante is near the entity's currennt position on screen
