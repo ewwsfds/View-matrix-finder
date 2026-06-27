@@ -13,26 +13,37 @@ using namespace std;
 ///Globals
 ///Globals
 DWORD pid = 35096;
+
+//Where the entity appears on screen in Pixels
 int ScreenPos_startX = 942;
 int ScreenPos_startY = 78;
 
+// The width and height to form a rectangle around it in Pixels
 int screen_width = 200;
 int screen_height = 200;
 
-
+// The title of the target window to search for
+// IMPORTANT: This is the window title displayed in the title bar, NOT the process filename (e.g., "First Triangle" not "game.exe")
 HWND hwnd = FindWindowA(nullptr, "First Triangle");
 
 float  fov = 45;
 float scale = 1.5;
 
 
-
+// Entity Position
 glm::vec3 aPos = glm::vec3(0, 0, -5.0f);
 
 
-int startX = ScreenPos_startX;
-int startY = ScreenPos_startY;
 
+// List of All target ViewMatrix addresses
+std::vector<uintptr_t> ViewMatrix_addresses = { 0x000000E83891EE30 };
+
+
+
+
+/// END of Globals
+/// END of Globals
+/// END of Globals
 
 
 
@@ -260,6 +271,8 @@ HANDLE OpenProcessByPid(DWORD pid)
 }
 
 
+int startX = ScreenPos_startX;
+int startY = ScreenPos_startY;
 
 struct WindowSize
 {
@@ -301,7 +314,6 @@ int main()
 
 
 
-    std::vector<uintptr_t> ViewMatrix_addresses ={ 0x000000E83891EE30 };
     glm::mat4 projectionMatrix = CreateProjectionMatrix(fov, size.width, size.height);
 
     vector<OffsetResult> validMatrices;
