@@ -27,8 +27,6 @@ int screen_height = 200;
 HWND hwnd = FindWindowA(nullptr, "First Triangle");
 
 float  fov = 45;
-float scale = 1.5;
-
 
 // Entity Position
 glm::vec3 aPos = glm::vec3(0, 0, -5.0f);
@@ -297,6 +295,7 @@ int main()
 {
 
     WindowSize size = GetWindowSize(hwnd);
+    float scale = 1.5;
 
     size.height *= scale;
     size.width *= scale;
